@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Cargos</title>
+
+<link th:href="@{/css/bootstrap.css}" rel="stylesheet" media="screen">
+<link th:href="@{/css/mineduc.css}" rel="stylesheet" media="screen">
+</head>
+<body>
+	<div class="container with-outline page-mineduc rounded-bottom cf">
+		<img class="logo-mineduc" th:src="@{/img/logo-med.png}">
+		<h1 class="title-application">static2.mineduc.cl</h1>
+
+
+		<ol class="breadcrumb with-outline">
+			<span class="glyphicon glyphicon-chevron-right"></span>&nbsp;Ud.&nbsp;está&nbsp;en&nbsp;:&nbsp;
+			<li><a href="index.html">Inicio</a></li>
+			<li class="active">Indice de Ejemplos</li>
+		</ol>
+
+		<div id="menu-mineduc" class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" th:href="@{/}"><span
+					class="glyphicon glyphicon-home"></span>Home</a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a th:href="@{/presupuestos}">Presupuestos</a></li>
+					<li><a th:href="@{/orden-administrativa}">Orden
+							administrativa</a></li>
+					<li><a th:href="@{/documentos-financieros}">Documentos
+							financieros</a></li>
+					<li><a th:href="@{/memorandums}">Memorandums</a></li>
+					<li><a th:href="@{/digitalizacion}">Digitalizacion</a></li>
+					<li><a th:href="@{/despacho-documentos}">Despacho doc.</a></li>
+					<li><a th:href="@{/mantenedores}">Administracion</a></li>
+				</ul>
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+
+		<div
+			class="container-fluid content with-outline rounded-top rounded-bottom">
+			<br>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-12 col-lg-12">
+							<h3>Nuevo Cargo</h3>
+							<div class="form-group">
+								<form th:action="@{save}" th:object="${cargo}" method="post">
+
+									<label for="textfield4" style="width: 100px;">Nombre:</label> <input
+										class="form-control" id="textfield4" type="text"
+										style="width: 250px;" th:field="*{name}"> <br>
+									<label for="textfield6" style="width: 100px;">Eliminado?:</label>
+									<input class="form-control" id="textfield6"
+										style="width: 250px;" type="checkbox" th:field="*{delete}">
+									<br>
+							</div>
+							<br>
+
+						</div>
+
+					</div>
+					<br>
+
+					<div class="row pull-right">
+						<div class="col-md-12">
+							<button type="button" class="btn btn-default btn-md btn-lg">
+								<span class="glyphicon glyphicon-remove"></span> <span
+									class="font-gob">Cancelar</span>
+							</button>
+							<button type="submit" class="btn btn-primary btn-md btn-lg">
+								<span class="glyphicon glyphicon-floppy-save"></span> <span
+									class="font-gob">Guardar</span>
+							</button>
+						</div>
+					</div>
+					</form>
+
+				</div>
+			</div>
+			<br>
+			<footer>
+				<hr class="line-separator red">
+				<address>
+					<p>
+						<strong>Ministerio de Educación de Chile</strong><br> <a
+							href="http://www.gob.cl"
+							title="Ir al portal del Gobierno de Chile">Gobierno de Chile</a><br>
+						Dirección: Av. Libertador Bernardo O'Higgins 1371. Teléfono +56 2
+						24066000<br> <span class="text-blue-light">Versión
+							1.1.0</span><br>
+					</p>
+				</address>
+			</footer>
+		</div>
+		<br>
+	</div>
+
+</body>
+</html>

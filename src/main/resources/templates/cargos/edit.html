@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1" />
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form th:action="@{save}" th:object="${cargo}" method="post">
+	<input type="hidden" th:field="*{id}">
+		<table>
+			<tr>
+				<td>Nombre:</td>
+				<td><input type="text" th:field="*{name}"></td>
+			</tr>
+			<tr>
+				<td>Nombre:</td>
+				<td><input type="checkbox" th:field="*{delete}"></td>
+			</tr>
+			<tr>
+				<td>Nombre:</td>
+				<td><button type="submit">guardar</button></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>
